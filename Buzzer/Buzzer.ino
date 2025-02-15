@@ -58,14 +58,24 @@ void loop() {
 // delay(200);
 tone(buzzer_Pin_1, 294);
 delay(200);
-tone(buzzer_Pin_1, 392);
+noTone(buzzer_Pin_1);
 delay(200);
 
+tone(buzzer_Pin_1, 392);
+delay(200);
+noTone(buzzer_Pin_1);
+delay(200);
 tone(buzzer_Pin_1, 330);
+delay(200);
+noTone(buzzer_Pin_1);
 delay(200);
 tone(buzzer_Pin_1,262);
 delay(200);
+noTone(buzzer_Pin_1);
+delay(200);
 tone(buzzer_Pin_1, 440);
+delay(200);
+noTone(buzzer_Pin_1);
 delay(200);
 
 
