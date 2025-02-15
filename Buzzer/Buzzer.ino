@@ -20,28 +20,46 @@ void setup() {
 }
 void buzzer_1(){
   tone(buzzer_Pin_1, 440,200);
+  delay(200);
   noTone(buzzer_Pin_1);
   //plays octave 4 A
 }
 void buzzer_2(){
   tone(buzzer_Pin_2,262, 200);
+  delay(200);
   noTone(buzzer_Pin_2);
   //plays octave 4 c
 }
 void buzzer_3(){
   tone(buzzer_Pin_3, 330, 200);
+  delay(200);
   noTone(buzzer_Pin_3);
   //plays octave 4 e
 }
 void buzzer_4(){
   tone(buzzer_Pin_4, 392, 200);
+  delay(200);
   noTone(buzzer_Pin_4);
   //plays octave 4 G
 }
 void buzzer_5(){
   tone(buzzer_Pin_5, 294, 200);
+  delay(200);
   noTone(buzzer_Pin_5);
   //plays octave 4 D
+}
+void mistake(){
+tone(buzzer_Pin_1, 1174, 200);
+tone(buzzer_Pin_2, 1174, 200);
+tone(buzzer_Pin_3, 1174, 200);
+tone(buzzer_Pin_4, 1174, 200);
+tone(buzzer_Pin_5, 1174, 200);
+delay(200);
+noTone(buzzer_Pin_1);
+noTone(buzzer_Pin_2);
+noTone(buzzer_Pin_3);
+noTone(buzzer_Pin_4);
+noTone(buzzer_Pin_5);
 }
 void loop() {
 //COde for the fast synthwaveish music (quick beat)
