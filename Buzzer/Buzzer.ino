@@ -44,7 +44,7 @@ void buzzer_5(){
   //plays octave 4 D
 }
 void loop() {
-  
+//COde for the fast synthwaveish music (quick beat)
 // tone(buzzer_Pin_1, 294, 200);
 // delay(200);
 // tone(buzzer_Pin_1, 392, 200);
@@ -56,25 +56,50 @@ void loop() {
 // delay(200);
 // tone(buzzer_Pin_1, 440,200);
 // delay(200);
+
+
+//for slower around 120 bpm music loop, can snap to
+// tone(buzzer_Pin_1, 294);
+// delay(200);
+// noTone(buzzer_Pin_1);
+// delay(200);
+
+// tone(buzzer_Pin_1, 392);
+// delay(200);
+// noTone(buzzer_Pin_1);
+// delay(200);
+// tone(buzzer_Pin_1, 330);
+// delay(200);
+// noTone(buzzer_Pin_1);
+// delay(200);
+// tone(buzzer_Pin_1,262);
+// delay(200);
+// noTone(buzzer_Pin_1);
+// delay(200);
+// tone(buzzer_Pin_1, 440);
+// delay(200);
+// noTone(buzzer_Pin_1);
+// delay(200);
+
 tone(buzzer_Pin_1, 294);
-delay(200);
+delay(2000);
 noTone(buzzer_Pin_1);
 delay(200);
 
 tone(buzzer_Pin_1, 392);
-delay(200);
+delay(2000);
 noTone(buzzer_Pin_1);
 delay(200);
 tone(buzzer_Pin_1, 330);
-delay(200);
+delay(2000);
 noTone(buzzer_Pin_1);
 delay(200);
 tone(buzzer_Pin_1,262);
-delay(200);
+delay(2000);
 noTone(buzzer_Pin_1);
 delay(200);
 tone(buzzer_Pin_1, 440);
-delay(200);
+delay(2000);
 noTone(buzzer_Pin_1);
 delay(200);
 
