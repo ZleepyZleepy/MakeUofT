@@ -41,21 +41,34 @@ void buzzer_4(){
 void buzzer_5(){
   tone(buzzer_Pin_5, 294, 200);
   noTone(buzzer_Pin_5);
-  //plays octave 4 5
+  //plays octave 4 D
 }
 void loop() {
   
-tone(buzzer_Pin_1, 294, 200);
+// tone(buzzer_Pin_1, 294, 200);
+// delay(200);
+// tone(buzzer_Pin_1, 392, 200);
+// delay(200);
+
+// tone(buzzer_Pin_1, 330, 200);
+// delay(200);
+// tone(buzzer_Pin_1,262, 200);
+// delay(200);
+// tone(buzzer_Pin_1, 440,200);
+// delay(200);
+tone(buzzer_Pin_1, 294);
 delay(200);
-tone(buzzer_Pin_1, 392, 200);
+tone(buzzer_Pin_1, 392);
 delay(200);
 
-tone(buzzer_Pin_1, 330, 200);
+tone(buzzer_Pin_1, 330);
 delay(200);
-tone(buzzer_Pin_1,262, 200);
+tone(buzzer_Pin_1,262);
 delay(200);
-tone(buzzer_Pin_1, 440,200);
+tone(buzzer_Pin_1, 440);
 delay(200);
+
+
   // buttonState = digitalRead(buttonPin);
   // if (true) {
   //   tone(8, 440);
