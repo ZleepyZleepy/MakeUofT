@@ -62,6 +62,7 @@ noTone(buzzer_Pin_4);
 noTone(buzzer_Pin_5);
 }
 void loop() {
+  mistake();
 //COde for the fast synthwaveish music (quick beat)
 // tone(buzzer_Pin_1, 294, 200);
 // delay(200);
@@ -99,28 +100,29 @@ void loop() {
 // noTone(buzzer_Pin_1);
 // delay(200);
 
-tone(buzzer_Pin_1, 294);
-delay(2000);
-noTone(buzzer_Pin_1);
-delay(200);
+//sound testing code
+// tone(buzzer_Pin_1, 294);
+// delay(2000);
+// noTone(buzzer_Pin_1);
+// delay(200);
 
-tone(buzzer_Pin_1, 392);
-delay(2000);
-noTone(buzzer_Pin_1);
-delay(200);
-tone(buzzer_Pin_1,262);
-delay(2000);
-noTone(buzzer_Pin_1);
-delay(200);
-tone(buzzer_Pin_1, 330);
-delay(2000);
-noTone(buzzer_Pin_1);
-delay(200);
+// tone(buzzer_Pin_1, 392);
+// delay(2000);
+// noTone(buzzer_Pin_1);
+// delay(200);
+// tone(buzzer_Pin_1,262);
+// delay(2000);
+// noTone(buzzer_Pin_1);
+// delay(200);
+// tone(buzzer_Pin_1, 330);
+// delay(2000);
+// noTone(buzzer_Pin_1);
+// delay(200);
 
-tone(buzzer_Pin_1, 440);
-delay(2000);
-noTone(buzzer_Pin_1);
-delay(200);
+// tone(buzzer_Pin_1, 440);
+// delay(2000);
+// noTone(buzzer_Pin_1);
+// delay(200);
 
 
   // buttonState = digitalRead(buttonPin);
