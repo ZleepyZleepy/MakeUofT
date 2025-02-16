@@ -49,11 +49,11 @@ void buzzer_5(){
   //plays octave 4 D
 }
 void mistake(){
-tone(buzzer_Pin_1, 174, 200);
-tone(buzzer_Pin_2, 174, 200);
-tone(buzzer_Pin_3, 174, 200);
-tone(buzzer_Pin_4, 174, 200);
-tone(buzzer_Pin_5, 174, 200);
+tone(buzzer_Pin_1, 114, 200);
+tone(buzzer_Pin_2, 114, 200);
+tone(buzzer_Pin_3, 114, 200);
+tone(buzzer_Pin_4, 114, 200);
+tone(buzzer_Pin_5, 114, 200);
 delay(200);
 noTone(buzzer_Pin_1);
 noTone(buzzer_Pin_2);
