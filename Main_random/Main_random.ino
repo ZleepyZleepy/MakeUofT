@@ -22,6 +22,7 @@ void setup() {
     pinMode(i, OUTPUT);
     i += 1;
   }
+  randomSeed(analogRead(1));
 }
 
 void loop() {
@@ -55,8 +56,8 @@ void loop() {
 }
 
 int micPos() {
-  int[4] mn = {1024, 1024, 1024, 1024, 1024};
-  int[4] mx = {0, 0, 0, 0, 0};
+  int mn[] = {1024, 1024, 1024, 1024, 1024};
+  int mx[] = {0, 0, 0, 0, 0};
 
   for (int j = 0; j < 50; ++j) {
     for (int i = 0; i < 4; ++i) {
