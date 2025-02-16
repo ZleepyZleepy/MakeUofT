@@ -5,9 +5,15 @@ int buzzer_Pin_4 = 12;
 int buzzer_Pin_5 = 13;
 int buttonPin = 2;
 int buttonState;
+int LED_pin1 = 1;
+int LED_pin2 = 2;
+int LED_pin3 = 3;
+int LED_pin4 = 4;
+int LED_pin5 = 5;
 //int delayTime = 500;
 int i =9;
-
+int j =1;
+int position = 0;
 void setup() {
   while (i < 14){
     pinMode(i, OUTPUT);
@@ -15,7 +21,11 @@ void setup() {
 
 
   }
-
+  while (j<6){
+    pinMode(j, OUTPUT);
+    j += 1;
+  }
+randomSeed(analogRead(1));
 
 }
 void buzzer_1(){
@@ -49,19 +59,135 @@ void buzzer_5(){
   //plays octave 4 D
 }
 void mistake(){
-tone(buzzer_Pin_1, 1174, 200);
+tone(buzzer_Pin_1, 114, 200);
 tone(buzzer_Pin_2, 1174, 200);
-tone(buzzer_Pin_3, 1174, 200);
-tone(buzzer_Pin_4, 1174, 200);
-tone(buzzer_Pin_5, 1174, 200);
-delay(200);
+tone(buzzer_Pin_3, 432, 200);
+tone(buzzer_Pin_4, 243, 200);
+tone(buzzer_Pin_5, 546, 200);
+delay(20);
 noTone(buzzer_Pin_1);
 noTone(buzzer_Pin_2);
 noTone(buzzer_Pin_3);
 noTone(buzzer_Pin_4);
 noTone(buzzer_Pin_5);
+delay(200);
+
+tone(buzzer_Pin_1, 114, 2000);
+tone(buzzer_Pin_2, 1174, 2000);
+tone(buzzer_Pin_3, 432, 2000);
+tone(buzzer_Pin_4, 243, 2000);
+tone(buzzer_Pin_5, 546, 2000);
+delay(2000);
+noTone(buzzer_Pin_1);
+noTone(buzzer_Pin_2);
+noTone(buzzer_Pin_3);
+noTone(buzzer_Pin_4);
+noTone(buzzer_Pin_5);
+delay(200);
 }
+void warning(){
+  int l = 1;
+while (l<5){
+   tone(buzzer_Pin_1, 1174, 200);
+tone(buzzer_Pin_2, 1174, 200);
+tone(buzzer_Pin_3, 1174, 200);
+tone(buzzer_Pin_4, 1174, 200);
+tone(buzzer_Pin_5, 1174, 200);
+delay(20);
+noTone(buzzer_Pin_1);
+noTone(buzzer_Pin_2);
+noTone(buzzer_Pin_3);
+noTone(buzzer_Pin_4);
+noTone(buzzer_Pin_5);
+delay(20);
+l += 1;
+}
+//   tone(buzzer_Pin_1, 1174, 200);
+// tone(buzzer_Pin_2, 1174, 200);
+// tone(buzzer_Pin_3, 1174, 200);
+// tone(buzzer_Pin_4, 1174, 200);
+// tone(buzzer_Pin_5, 1174, 200);
+// delay(20);
+// noTone(buzzer_Pin_1);
+// noTone(buzzer_Pin_2);
+// noTone(buzzer_Pin_3);
+// noTone(buzzer_Pin_4);
+// noTone(buzzer_Pin_5);
+// delay(20);
+
+// tone(buzzer_Pin_1, 1174, 2000);
+// tone(buzzer_Pin_2, 1174, 2000);
+// tone(buzzer_Pin_3, 1174, 2000);
+// tone(buzzer_Pin_4, 1174, 2000);
+// tone(buzzer_Pin_5, 1174, 2000);
+// delay(20);
+// noTone(buzzer_Pin_1);
+// noTone(buzzer_Pin_2);
+// noTone(buzzer_Pin_3);
+// noTone(buzzer_Pin_4);
+// noTone(buzzer_Pin_5);
+// delay(20);
+
+//  tone(buzzer_Pin_1, 1174, 200);
+// tone(buzzer_Pin_2, 1174, 200);
+// tone(buzzer_Pin_3, 1174, 200);
+// tone(buzzer_Pin_4, 1174, 200);
+// tone(buzzer_Pin_5, 1174, 200);
+// delay(20);
+// noTone(buzzer_Pin_1);
+// noTone(buzzer_Pin_2);
+// noTone(buzzer_Pin_3);
+// noTone(buzzer_Pin_4);
+// noTone(buzzer_Pin_5);
+// delay(20);
+
+// tone(buzzer_Pin_1, 1174, 2000);
+// tone(buzzer_Pin_2, 1174, 2000);
+// tone(buzzer_Pin_3, 1174, 2000);
+// tone(buzzer_Pin_4, 1174, 2000);
+// tone(buzzer_Pin_5, 1174, 2000);
+// delay(20);
+// noTone(buzzer_Pin_1);
+// noTone(buzzer_Pin_2);
+// noTone(buzzer_Pin_3);
+// noTone(buzzer_Pin_4);
+// noTone(buzzer_Pin_5);
+// delay(20);
+
+//  tone(buzzer_Pin_1, 1174, 200);
+// tone(buzzer_Pin_2, 1174, 200);
+// tone(buzzer_Pin_3, 1174, 200);
+// tone(buzzer_Pin_4, 1174, 200);
+// tone(buzzer_Pin_5, 1174, 200);
+// delay(20);
+// noTone(buzzer_Pin_1);
+// noTone(buzzer_Pin_2);
+// noTone(buzzer_Pin_3);
+// noTone(buzzer_Pin_4);
+// noTone(buzzer_Pin_5);
+// delay(20);
+
+// tone(buzzer_Pin_1, 1174, 2000);
+// tone(buzzer_Pin_2, 1174, 2000);
+// tone(buzzer_Pin_3, 1174, 2000);
+// tone(buzzer_Pin_4, 1174, 2000);
+// tone(buzzer_Pin_5, 1174, 2000);
+// delay(20);
+// noTone(buzzer_Pin_1);
+// noTone(buzzer_Pin_2);
+// noTone(buzzer_Pin_3);
+// noTone(buzzer_Pin_4);
+// noTone(buzzer_Pin_5);
+// delay(20);
+}
+int LED_pins[5] = {1,2,3,4,5};
+
+
 void loop() {
+  warning();
+  position = random(0,5);
+  digitalWrite(LED_pins[position], HIGH);
+
 //COde for the fast synthwaveish music (quick beat)
 // tone(buzzer_Pin_1, 294, 200);
 // delay(200);
@@ -99,28 +225,29 @@ void loop() {
 // noTone(buzzer_Pin_1);
 // delay(200);
 
-tone(buzzer_Pin_1, 294);
-delay(2000);
-noTone(buzzer_Pin_1);
-delay(200);
+//sound testing code
+// tone(buzzer_Pin_1, 294);
+// delay(2000);
+// noTone(buzzer_Pin_1);
+// delay(200);
 
-tone(buzzer_Pin_1, 392);
-delay(2000);
-noTone(buzzer_Pin_1);
-delay(200);
-tone(buzzer_Pin_1,262);
-delay(2000);
-noTone(buzzer_Pin_1);
-delay(200);
-tone(buzzer_Pin_1, 330);
-delay(2000);
-noTone(buzzer_Pin_1);
-delay(200);
+// tone(buzzer_Pin_1, 392);
+// delay(2000);
+// noTone(buzzer_Pin_1);
+// delay(200);
+// tone(buzzer_Pin_1,262);
+// delay(2000);
+// noTone(buzzer_Pin_1);
+// delay(200);
+// tone(buzzer_Pin_1, 330);
+// delay(2000);
+// noTone(buzzer_Pin_1);
+// delay(200);
 
-tone(buzzer_Pin_1, 440);
-delay(2000);
-noTone(buzzer_Pin_1);
-delay(200);
+// tone(buzzer_Pin_1, 440);
+// delay(2000);
+// noTone(buzzer_Pin_1);
+// delay(200);
 
 
   // buttonState = digitalRead(buttonPin);
