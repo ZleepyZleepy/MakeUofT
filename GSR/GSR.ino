@@ -1,6 +1,9 @@
 const int GSR=A0;
 int sensorValue=0;
 int gsr_average=0;
+int default_gsr = 0;
+bool stress = false;
+int readings_count = 0;
 
 void setup(){
   Serial.begin(9600);

@@ -87,7 +87,7 @@ delay(200);
 }
 void warning(){
   int l = 1;
-while (l<5){
+while (l<25){
    tone(buzzer_Pin_1, 1174, 200);
 tone(buzzer_Pin_2, 1174, 200);
 tone(buzzer_Pin_3, 1174, 200);
