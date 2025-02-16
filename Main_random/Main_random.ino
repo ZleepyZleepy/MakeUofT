@@ -12,7 +12,7 @@ int LED_pins[5] = {1,2,3,4,5};
 int micPins[5] = {A0, A1, A2, A3, A4};
 int micOutputs[5] = {0, 0, 0, 0, 0};
 int maxOutput = 0;
-int threshold = 200;
+int threshold = 900;
 
 int randomNum = 0;
 int points = 0;
@@ -54,36 +54,9 @@ void loop() {
   }
 }
 
-int micPos() {
-  int[4] mn = {1024, 1024, 1024, 1024, 1024};
-  int[4] mx = {0, 0, 0, 0, 0};
-
-  for (int j = 0; j < 50; ++j) {
-    for (int i = 0; i < 4; ++i) {
-      int val = analogRead(micPins[i]);
-      mn[i] = min(mn[i], val);
-      mx[i] = max(mx[i], val);
-    }
-  }
-
-  for (int i = 0; i < 4; ++i) {
-      micOutputs[i] = mx[i] - mn[i];
-  }
-
-  maxOutput = max(max(max(micOutputs[0], micOutputs[1]), max(micOutputs[2], micOutputs[3])), micOutputs[5]);
-
-  if (maxOutput == micOutputs[0] && micOutputs[0] > threshold) {
-    return 0;
-  } else if (maxOutput == micOutputs[1] && micOutputs[1] > threshold) {
-    return 1;
-  } else if (maxOutput == micOutputs[2] && micOutputs[2] > threshold) {
-    return 2;
-  } else if (maxOutput == micOutputs[3] && micOutputs[3] > threshold) {
-    return 3;
-  } else if (maxOutput == micOutputs[4] && micOutputs[4] > threshold) {
-    return 4;
-  } else {
-    return 5;
+int micPos(bool checking) {
+  if (checking) {
+    
   }
 }
 
@@ -135,3 +108,34 @@ noTone(buzzer_Pin_5);
 delay(50);
 l += 1;
 }
+
+  // int[4] mn = {1024, 1024, 1024, 1024, 1024};
+  // int[4] mx = {0, 0, 0, 0, 0};
+
+  // for (int j = 0; j < 50; ++j) {
+  //   for (int i = 0; i < 4; ++i) {
+  //     int val = analogRead(micPins[i]);
+  //     mn[i] = min(mn[i], val);
+  //     mx[i] = max(mx[i], val);
+  //   }
+  // }
+
+  // for (int i = 0; i < 4; ++i) {
+  //     micOutputs[i] = mx[i] - mn[i];
+  // }
+
+  // maxOutput = max(max(max(micOutputs[0], micOutputs[1]), max(micOutputs[2], micOutputs[3])), micOutputs[5]);
+
+  // if (maxOutput == micOutputs[0] && micOutputs[0] > threshold) {
+  //   return 0;
+  // } else if (maxOutput == micOutputs[1] && micOutputs[1] > threshold) {
+  //   return 1;
+  // } else if (maxOutput == micOutputs[2] && micOutputs[2] > threshold) {
+  //   return 2;
+  // } else if (maxOutput == micOutputs[3] && micOutputs[3] > threshold) {
+  //   return 3;
+  // } else if (maxOutput == micOutputs[4] && micOutputs[4] > threshold) {
+  //   return 4;
+  // } else {
+  //   return 5;
+  // }
