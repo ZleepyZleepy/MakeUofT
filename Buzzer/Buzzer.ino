@@ -184,8 +184,6 @@ int LED_pins[5] = {1,2,3,4,5};
 
 
 void loop() {
-  warning();
-  delay(5000);
   position = random(0,5);
   digitalWrite(LED_pins[position], HIGH);
 
