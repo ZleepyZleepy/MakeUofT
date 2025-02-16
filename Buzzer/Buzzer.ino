@@ -25,7 +25,7 @@ void setup() {
     pinMode(j, OUTPUT);
     j += 1;
   }
-randomSeed(analogRead(1));
+  randomSeed(analogRead(1));
 
 }
 void buzzer_1(){

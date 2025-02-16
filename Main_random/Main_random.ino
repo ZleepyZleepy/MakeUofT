@@ -1,3 +1,4 @@
+bool gameOver = false;
 int buzzer_Pin_1 = 9;
 int buzzer_Pin_2 = 10;
 int buzzer_Pin_3 = 11;
@@ -6,6 +7,15 @@ int buzzer_Pin_5 = 13;
 int buttonPin = 2;
 int buttonState;
 int i = 9;
+int LED_pins[5] = {1,2,3,4,5};
+
+int micPins[5] = {A0, A1, A2, A3, A4};
+int micOutputs[5] = {0, 0, 0, 0, 0};
+int maxOutput = 0;
+int threshold = 200;
+
+int randomNum = 0;
+int points = 0;
 
 void setup() {
   while (i < 14){
@@ -16,14 +26,65 @@ void setup() {
 
 void loop() {
   // put your main code here, to run repeatedly:
+  if (!gameOver) {
+    randomNum = random(0,5);
+    digitalWrite(LED_pins[randomNum], HIGH);
+    delay(200);
 
-  // generate random
-  // light led
-  // check mic position at led
-  // play sound (or error)
-  // add point
-  // loop again
+    if (micPos() == randomNum) {
+      if (randomNum == 0) {
+        buzzer_1();
+      }
+      if (randomNum == 1) {
+        buzzer_2();
+      }
+      if (randomNum == 2) {
+        buzzer_3();
+      }
+      if (randomNum == 3) {
+        buzzer_4();
+      }
+      if (randomNum == 4) {
+        buzzer_5();
+      }
+      points++;
+    } else {
+      gameOver = true;
+    }
+  }
+}
 
+int micPos() {
+  int[4] mn = {1024, 1024, 1024, 1024, 1024};
+  int[4] mx = {0, 0, 0, 0, 0};
+
+  for (int j = 0; j < 50; ++j) {
+    for (int i = 0; i < 4; ++i) {
+      int val = analogRead(micPins[i]);
+      mn[i] = min(mn[i], val);
+      mx[i] = max(mx[i], val);
+    }
+  }
+
+  for (int i = 0; i < 4; ++i) {
+      micOutputs[i] = mx[i] - mn[i];
+  }
+
+  maxOutput = max(max(max(micOutputs[0], micOutputs[1]), max(micOutputs[2], micOutputs[3])), micOutputs[5]);
+
+  if (maxOutput == micOutputs[0] && micOutputs[0] > threshold) {
+    return 0;
+  } else if (maxOutput == micOutputs[1] && micOutputs[1] > threshold) {
+    return 1;
+  } else if (maxOutput == micOutputs[2] && micOutputs[2] > threshold) {
+    return 2;
+  } else if (maxOutput == micOutputs[3] && micOutputs[3] > threshold) {
+    return 3;
+  } else if (maxOutput == micOutputs[4] && micOutputs[4] > threshold) {
+    return 4;
+  } else {
+    return 5;
+  }
 }
 
 void buzzer_1(){
