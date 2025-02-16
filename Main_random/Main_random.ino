@@ -22,6 +22,7 @@ void setup() {
     pinMode(i, OUTPUT);
     i += 1;
   }
+  randomSeed(analogRead(1));
 }
 
 void loop() {
@@ -53,6 +54,7 @@ void loop() {
     }
   }
 }
+
 
 int micPos(bool checking) {
   if (checking) {
